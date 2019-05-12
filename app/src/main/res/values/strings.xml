@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SocParser</string>
+    <string name="city_items_list">City items list</string>
+    <string name="city_items_spinner">City items spinner</string>
+</resources>

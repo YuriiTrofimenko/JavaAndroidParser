@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="items" type="tyaa.org.socparser.entity.CityItemList"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/listHeading"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@string/city_items_list"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="62dp"
+                android:maxHeight="62dp"
+                android:id="@+id/scrollView">
+
+                <ListView
+                    android:id="@+id/listView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    bind:city_item_list="@{items.mCityItemList}"/>
+            </ScrollView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="false"></ProgressBar>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
