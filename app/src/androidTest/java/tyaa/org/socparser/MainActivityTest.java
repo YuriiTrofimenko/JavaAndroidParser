@@ -40,6 +40,8 @@ import static org.junit.Assert.*;
 @SmallTest
 public class MainActivityTest {
 
+    private Integer testItemPos = 20;
+    
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =
             new ActivityTestRule(MainActivity.class, true, true);
@@ -68,13 +70,15 @@ public class MainActivityTest {
         }
 
         final int count = listView.getAdapter().getCount();
-        Preconditions.checkPositionIndex(3, count, "No 1 index " + count + " size");
-        CityItem obj = (CityItem)listView.getItemAtPosition(3);
+        Preconditions.checkPositionIndex(testItemPos, count, "No testItemPos index " + count + " size");
+        CityItem obj = (CityItem)listView.getItemAtPosition(testItemPos);
 
         onData(anything())
                 .inAdapterView(withId(R.id.listView))
-                .atPosition(3)
-                .perform(scrollTo(), click());
+                .atPosition(testItemPos)
+                .perform(click());
+                // Only for widgets inside ScrollView !!!
+                //.perform(scrollTo(), click());
 
         onView(withText(obj.name))
                 .inRoot(withDecorView(not(is(mActivityRule.getActivity()
