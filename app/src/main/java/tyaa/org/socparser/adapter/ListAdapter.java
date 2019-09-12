@@ -56,7 +56,7 @@ public class ListAdapter extends BaseAdapter {
 
         CityitemBinding binding =
                 DataBindingUtil.inflate(inflater, R.layout.cityitem, parent, false);
-        Log.d("MySpy", "bind!");
+        //Log.d("MySpy", "bind!");
         binding.setItem(list.get(position));
 
         return binding.getRoot();

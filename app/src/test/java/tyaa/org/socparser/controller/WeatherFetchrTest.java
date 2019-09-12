@@ -64,7 +64,13 @@ public class WeatherFetchrTest {
     @Test
     public void downloadCitiesItemsMock() throws Exception {
 
+        // Настраиваем макет mWeatherFetchrMock:
+        // когда на нем вызывается метод downloadCitiesItems -
+        // возвращать модель списка городов
         doReturn(mCityItemList).when(mWeatherFetchrMock).downloadCitiesItems("Donecka");
+        // Проверить, что:
+        // вызов метода downloadCitiesItems с аргументом "Donecka"
+        // должен вернуть ссылку, а не null
         assertNotNull(mWeatherFetchrMock.downloadCitiesItems("Donecka"));
         assertNotNull(mWeatherFetchrMock.downloadCitiesItems("Donecka").mCityItemList);
         assertTrue(mWeatherFetchrMock.downloadCitiesItems("Donecka").mCityItemList.size() > 0);
@@ -72,8 +78,10 @@ public class WeatherFetchrTest {
 
         //mWeatherFetchr.downloadCitiesItems("Donecka");
         //verify(mCityItemListMock, atLeast(1)).setCity_item(argument.capture());
-
+        // Вызываем на макете, автоматически связанном с макетом модели списка городов
+        // метод получения и обработки списка городов
         mWeatherFetchrInjectMocks.downloadCitiesItems("Donecka");
+        // Проверяем, был ли вызван хотя бы 1 раз метод setCity_item
         verify(mCityItemListMock, atLeast(1)).setCity_item(argument.capture());
     }
 

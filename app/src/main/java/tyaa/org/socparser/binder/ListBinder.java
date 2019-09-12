@@ -27,4 +27,6 @@ public class ListBinder {
         ListAdapter adapter = new ListAdapter(list);
         view.setAdapter(adapter);
     }
+
+
 }

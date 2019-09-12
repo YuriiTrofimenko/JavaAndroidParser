@@ -58,7 +58,7 @@ public class WeatherFetchr {
             }
 
         } catch (IOException ioe) {
-            Log.e(TAG, "Failed to fetch events items", ioe);
+            Log.e(TAG, "Failed to fetch events items: " + ioe.getMessage(), ioe);
             throw ioe;
         }
         return mCityItemList;

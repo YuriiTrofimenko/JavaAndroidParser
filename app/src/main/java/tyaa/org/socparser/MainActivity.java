@@ -21,6 +21,8 @@ import tyaa.org.socparser.global.Globals;
 
 public class MainActivity extends AppCompatActivity {
 
+    CityItemList cityItemList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +30,19 @@ public class MainActivity extends AppCompatActivity {
 
         MainBinding activityMainBinding =
                 DataBindingUtil.setContentView(this, R.layout.main);
-        final CityItemList cityItemList = Globals.mCityItemList;
+        cityItemList = Globals.mCityItemList;
         activityMainBinding.setItems(cityItemList);
+        activityMainBinding.setItemClickHandler(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        ListView listView1 = (ListView) findViewById(R.id.listView);
+                        Toast.makeText(getBaseContext(), cityItemList.mCityItemList.get(i).name, Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
+
+        /* ListView listView1 = (ListView) findViewById(R.id.listView);
 
         listView1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -39,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(getBaseContext(), cityItemList.mCityItemList.get(i).name, Toast.LENGTH_SHORT).show();
             }
-        });
+        }); */
 
         /*CityItem cityItem = new CityItem("NewYork");
         cityItemList.setCity_item(cityItem);
