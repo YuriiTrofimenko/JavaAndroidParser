@@ -1,7 +1,8 @@
 package tyaa.org.socparser.entity;
 
-import android.databinding.ObservableArrayList;
 import android.view.View;
+
+import androidx.databinding.ObservableArrayList;
 
 /**
  * Created by student on 12.08.2017.

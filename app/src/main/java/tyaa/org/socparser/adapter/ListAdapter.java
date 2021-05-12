@@ -1,13 +1,13 @@
 package tyaa.org.socparser.adapter;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
-import android.databinding.ObservableArrayList;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableArrayList;
 
 import tyaa.org.socparser.R;
 import tyaa.org.socparser.databinding.CityitemBinding;

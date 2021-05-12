@@ -44,10 +44,10 @@ public class WeatherFetchr {
             //создаем объект-документ из всего результата запроса
             Document document = Jsoup.connect(WEATHER_URL).get();
 
-            //Log.d("Result: ", document.title());
+            // Log.d("Result: ", document.html());
             //создаем объект-коллекцию элементов Jsoup
             Elements elementCitiesItems =
-                    document.select("div.catalogCitiesBlock > a[name=" + regionName + "] ~ .mp-listCountry li > a");
+                    document.select("div.catalogCitiesBlock > div[id=" + regionName + "] ~ .mp-listCountry li > a");
 
             for (Element a : elementCitiesItems) {
 

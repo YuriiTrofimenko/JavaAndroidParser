@@ -1,16 +1,9 @@
 package tyaa.org.socparser.binder;
 
-import android.databinding.BindingAdapter;
-import android.databinding.InverseBindingAdapter;
-import android.databinding.InverseBindingListener;
-import android.databinding.ObservableArrayList;
-import android.support.v7.widget.AppCompatSpinner;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.databinding.BindingAdapter;
+import androidx.databinding.ObservableArrayList;
 
 import tyaa.org.socparser.adapter.ListAdapter;
 import tyaa.org.socparser.entity.CityItem;

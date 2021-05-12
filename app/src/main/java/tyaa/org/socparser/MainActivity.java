@@ -1,19 +1,15 @@
 package tyaa.org.socparser;
 
-import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.concurrent.ExecutionException;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import tyaa.org.socparser.controller.FetchCitiesItemsTask;
 import tyaa.org.socparser.databinding.MainBinding;
-import tyaa.org.socparser.entity.CityItem;
 import tyaa.org.socparser.entity.CityItemList;
 import tyaa.org.socparser.global.Globals;
 
